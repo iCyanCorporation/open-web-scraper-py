@@ -5,17 +5,21 @@ import time
 import json
 
 class WebScraper:
-    def __init__(self, config_file):
-        
+    def __init__(self, config_file, page_sleep=2):
         filename = config_file.split('/')[-1]
         filename = filename.split('.')[0]
-        self.output_dir = 'output/' + filename + '.csv'
 
+        self.output_dir = 'output/' + filename + '.csv'
         self.config = self.read_json(config_file)
         self.crawled_data = []
-
         self.visite_links = []
         self.visited_links = []
+
+        # ページのスリープ時間
+        self.page_sleep = page_sleep
+
+        # CSVファイルの初期化
+        self.init_csv()
 
     # データ抽出関数
     def extract_data(self, soup, selector, attr=None):
@@ -43,7 +47,7 @@ class WebScraper:
             # if link.startswith('/'):
             #     link = start_url + link
             link = self.visite_links.pop(0)
-            print(f"Processing link: {link}")
+            print(f"Processing link: {link}(all: {len(self.visite_links)})")
 
             link_response = requests.get(link)
             link_soup = BeautifulSoup(link_response.content, 'html.parser')
@@ -60,26 +64,28 @@ class WebScraper:
 
             # 抽出した情報の保存
             for domain in domains:
-                # print(f"Found domain: {domain}")
-                # self.crawled_data.append([start_url, link, domain])
                 self.crawled_data.append([domain])
             
             self.visited_links.append(link)
-            time.sleep(2)
+            time.sleep(self.page_sleep)
 
     def add_link(self, link):
         if link not in self.visite_links and link not in self.visited_links:
             # add link to the front of the self.visite_links
             self.visite_links.insert(0, link)
 
-
     def read_json(self, json_file):
         with open(json_file, 'r') as file:
             config = json.load(file)
         return config
     
-    def save_csv(self):
+    def init_csv(self):
         with open(self.output_dir, mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(["domain"])
+
+    def save_csv(self):
+        with open(self.output_dir, mode='a', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(["domain"]) # "start_url", "link"
             writer.writerows(self.crawled_data)
@@ -88,8 +94,11 @@ class WebScraper:
 
 if __name__ == "__main__":
     try:
+     
         json_file = "input/website1.json"
-        crawler = WebScraper(json_file)
+        page_sleep = 2
+
+        crawler = WebScraper(json_file, page_sleep)
         crawler.crawl_web()
 
     except Exception as e:
