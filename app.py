@@ -94,7 +94,6 @@ class WebScraper:
 
 if __name__ == "__main__":
     try:
-     
         json_file = "input/website1.json"
         page_sleep = 2
 
