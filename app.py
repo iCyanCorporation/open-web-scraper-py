@@ -93,12 +93,10 @@ class WebScraper:
         print(f"データが '{self.output_dir}' に保存されました。")
 
 if __name__ == "__main__":
-
-    json_file = "./input/website1.json"
-    page_sleep = 2
-    crawler = WebScraper(json_file, page_sleep)
-
     try:
+        json_file = "./input/website.json"
+        page_sleep = 2
+        crawler = WebScraper(json_file, page_sleep)
         crawler.crawl_web()
 
     except Exception as e:
