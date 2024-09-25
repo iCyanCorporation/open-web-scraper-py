@@ -1,4 +1,4 @@
-# Open Web Scraper Python
+# Open Web app.python
 
 A Python program designed to execute web scraping tasks using configurations exported from the [Open Web Scraper](https://openwebscraper.com) Chrome plugin.
 
@@ -15,7 +15,7 @@ A Python program designed to execute web scraping tasks using configurations exp
 
 ## Introduction
 
-**Open Web Scraper Python** is a lightweight Python tool for running web scraping tasks using the settings from the Open Web Scraper Chrome plugin. This program reads a JSON settings file exported from the plugin and performs the scraping based on the specified configurations.
+**Open Web app.python** is a lightweight Python tool for running web scraping tasks using the settings from the Open Web Scraper Chrome plugin. This program reads a JSON settings file exported from the plugin and performs the scraping based on the specified configurations.
 
 ## Features
 
@@ -27,8 +27,8 @@ A Python program designed to execute web scraping tasks using configurations exp
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/open-web-scraper-python.git
-   cd open-web-scraper-python
+   git clone https://github.com/yourusername/open-web-app.python.git
+   cd open-web-app.python
    ```
 
 2. Create a virtual environment (optional but recommended):
@@ -48,7 +48,7 @@ A Python program designed to execute web scraping tasks using configurations exp
 
 2. Run the Python script with the path to your JSON configuration file:
    ```bash
-   python scraper.py path/to/your-settings.json
+   python app.py path/to/your-settings.json
    ```
 
 3. The scraped data will be saved in the format specified in your settings file (e.g., CSV, JSON).
@@ -87,12 +87,12 @@ Here are some example commands to get you started:
 
 - Scraping a single page:
   ```bash
-  python scraper.py settings/single_page.json
+  python app.py settings/single_page.json
   ```
 
 - Scraping with pagination:
   ```bash
-  python scraper.py settings/paginated.json
+  python app.py settings/paginated.json
   ```
 
 ## Contributing
