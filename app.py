@@ -9,7 +9,7 @@ class WebScraper:
         filename = config_file.split('/')[-1]
         filename = filename.split('.')[0]
 
-        self.output_dir = 'output/' + filename + '.csv'
+        self.output_dir = './output/' + filename + '.csv'
         self.config = self.read_json(config_file)
         self.crawled_data = []
         self.visite_links = []
@@ -94,7 +94,7 @@ class WebScraper:
 
 if __name__ == "__main__":
     try:
-        json_file = "input/website1.json"
+        json_file = "./input/website1.json"
         page_sleep = 2
 
         crawler = WebScraper(json_file, page_sleep)
