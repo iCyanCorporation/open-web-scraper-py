@@ -1,4 +1,4 @@
-# Open Web app for python
+# Web Scraper for python
 
 A Python program designed to execute web scraping tasks using configurations exported from the [Open Web Scraper](https://webscraper.io/) Chrome plugin.
 
@@ -15,7 +15,7 @@ A Python program designed to execute web scraping tasks using configurations exp
 
 ## Introduction
 
-**Open Web app.python** is a lightweight Python tool for running web scraping tasks using the settings from the Open Web Scraper Chrome plugin. This program reads a JSON settings file exported from the plugin and performs the scraping based on the specified configurations.
+**eb Scraper** is a lightweight Python tool for running web scraping tasks using the settings from the Open Web Scraper Chrome plugin. This program reads a JSON settings file exported from the plugin and performs the scraping based on the specified configurations.
 
 ## Features
 
@@ -27,8 +27,8 @@ A Python program designed to execute web scraping tasks using configurations exp
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/open-web-app.python.git
-   cd open-web-app.python
+   git clone https://github.com/iCyanCorporation/open-web-scraper-py.git
+   cd open-web-scraper-py
    ```
 
 2. Create a virtual environment (optional but recommended):
