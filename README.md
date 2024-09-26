@@ -1,6 +1,6 @@
-# Open Web app.python
+# Open Web app for python
 
-A Python program designed to execute web scraping tasks using configurations exported from the [Open Web Scraper](https://openwebscraper.com) Chrome plugin.
+A Python program designed to execute web scraping tasks using configurations exported from the [Open Web Scraper](https://webscraper.io/) Chrome plugin.
 
 ## Table of Contents
 
@@ -108,3 +108,6 @@ Contributions are welcome! If you'd like to contribute, please follow these step
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## note
+- test: https://webscraper.io./test-sites/e-commerce/allinone
