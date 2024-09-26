@@ -85,15 +85,12 @@ The JSON settings file should follow the format exported from the Open Web Scrap
 
 Here are some example commands to get you started:
 
-- Scraping a single page:
+- Scraping pages:
   ```bash
-  python app.py settings/single_page.json
+  python app.py
   ```
-
-- Scraping with pagination:
-  ```bash
-  python app.py settings/paginated.json
-  ```
+  
+  > read json from input folder
 
 ## Contributing
 
